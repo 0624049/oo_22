@@ -1,12 +1,13 @@
 interface Shape{
-    abstract void getArea(double area);
+    abstract double getArea();
 }
 class Rectangle implements Shape{
 
     double length,width;
 
-    public void getArea(double length,double width){
-        Sytem.out.println("getArea="+length*width);
+    public double getArea(){
+        double area=length*width;
+        return area;
     }
     public void toString(String toStr){
 
@@ -15,21 +16,20 @@ class Rectangle implements Shape{
 class Triangle implements Shape{
     double base,height;
 
-    public void getArea(double base,double height){
-        Sytem.out.println("getArea="+(base*height)/2);
+    public double getArea(){
+        double area=(base*height)/2;
+        return area;
     }
     public void toString(String toStr){
 
     }
 }
-public class interface{
+public class Main{
     public static void main(String arg[]){
         Rectangle rec;
-        rec=new Rectangle(5,9);
-        rec.getArea();
+        rec.getArea(5,9);
 
         Triangle tri;
-        tri=new Triangle(7,8);
-        tri.getArea();
+        tri.getArea(7,8);
     }
 }
